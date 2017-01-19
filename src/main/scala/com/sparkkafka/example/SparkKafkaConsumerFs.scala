@@ -22,7 +22,7 @@ object SparkKafkaConsumerFs {
 
   // function to parse input into CDR class
   def parseCallDataRecord(str: String): CallDataRecord = {
-    val c = str.split("\\t", -1).map(str => if (str.isEmpty()) "0" else str))
+    val c = str.split("\\t", -1).map(str => if (str.isEmpty()) "0" else str)
     CallDataRecord(c(0).toInt, c(1).toLong, c(2).toInt, c(3).toFloat,
       c(4).toFloat, c(5).toFloat, c(6).toFloat, c(7).toFloat)
   }

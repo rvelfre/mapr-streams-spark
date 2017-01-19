@@ -35,6 +35,18 @@ To Run the Spark Consumer Producer (in separate consoles if you want to run at t
 
 spark-submit --class com.sparkkafka.example.SparkKafkaConsumer --master local[2] mapr-streams-spark-1.0.jar localhost:9999 /user/user01/stream:cdrs /user/user01/stream:cdrp
 
+To Run the Spark Consumer FS (in separate consoles if you want to run at the same time) run the spark consumer with the topic to read from and write to:
+
+spark-submit --class com.sparkkafka.example.SparkKafkaConsumerFS --master local[2] mapr-streams-spark-1.0.jar localhost:9999 /user/user01/stream:cdrp
+
+It comsumes from MapR Stream topic cdrp and write on MapR-FS as JSON files in maprfs://tmp/Consumer-Kafka-Out/
+
+To Run the Spark Consumer DB (in separate consoles if you want to run at the same time) run the spark consumer with the topic to read from and write to:
+
+spark-submit --class com.sparkkafka.example.SparkKafkaConsumerMapRDB --master local[2] mapr-streams-spark-1.0.jar
+
+It comsumes from MapR Stream topic cdrp and write on MapR-DB table /user/user01/smscall
+
 To run the MapR Streams Java consumer, run the Java consumer with the topic to read from:
 
 java -cp mapr-streams-spark-1.0.jar:`mapr classpath` com.streamskafka.example.MsgConsumer /user/user01/stream:cdrp

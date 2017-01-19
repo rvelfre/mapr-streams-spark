@@ -17,6 +17,7 @@
         <scala.version>2.10.4</scala.version>
         <spark.version>1.6.1</spark.version>
         <mapr_eco_version>1607</mapr_eco_version>
+        <mapr.version>1.1.1-mapr-1602-m7-5.2.0</mapr.version>
         <maven-scala-plugin.version>2.15.2</maven-scala-plugin.version>
 
     </properties>  
@@ -101,6 +102,11 @@
             <groupId>com.mapr.streams</groupId>
             <artifactId>mapr-streams</artifactId>
             <version>5.2.0-mapr</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-server</artifactId>
+            <version>${mapr.version}</version>
         </dependency>
 
     </dependencies>
